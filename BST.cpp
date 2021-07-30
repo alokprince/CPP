@@ -17,6 +17,14 @@ struct Node
         right = NULL;
     }
 };
+struct Info
+{
+    int min;
+    int max;
+    int size;
+    int ans;
+    bool isBST;
+};
 
 Node *insertBST(Node *root, int val)
 {
@@ -311,18 +319,110 @@ bool isIdentical(Node *root1, Node *root2)
     {
         return false;
     }
-    else{
+    else
+    {
         bool con1 = (root1->data == root2->data);
-        bool con2 = isIdentical(root1->left,root2->left);
-        bool con3 = isIdentical(root2->right,root2->right);
+        bool con2 = isIdentical(root1->left, root2->left);
+        bool con3 = isIdentical(root2->right, root2->right);
 
-        if(con1 && con2 && con3){
+        if (con1 && con2 && con3)
+        {
             return true;
-        } else 
-        return false;
+        }
+        else
+            return false;
     }
 }
 
+// Largest binary search tree in BT //
+// min is subtree
+// max in subtree
+// subtree size
+// size of largest BST
+// isBST
+Info largestBSTinBT(Node *root)
+{
+    if (root == NULL)
+    {
+        return {INT_MIN, INT_MAX, 0, 0, true};
+    }
+    if (root->left == NULL && root->right == NULL)
+    {
+        return {root->data, root->data, 1, 1, true};
+    }
+
+    Info leftSubtree = largestBSTinBT(root->left);
+    Info rightSubtree = largestBSTinBT(root->right);
+
+    Info curr;
+    curr.size = (1 + leftSubtree.size + rightSubtree.size);
+
+    if (leftSubtree.isBST && rightSubtree.isBST && leftSubtree.max < root->data && rightSubtree.min > root->data)
+    {
+        curr.min = min(leftSubtree.min, min(root->data, rightSubtree.min));
+        curr.max = max(leftSubtree.max, max(rightSubtree.max, root->data));
+
+        curr.ans = curr.size;
+        curr.isBST = true;
+
+        return curr;
+    }
+
+    curr.ans = max(leftSubtree.max, rightSubtree.max);
+    curr.isBST = false;
+    return curr;
+}
+// Restoreing BST
+void swap(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+void calculatePointer(Node *root, Node **first, Node **mid, Node **last, Node **prev)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+
+    calculatePointer(root->left, first, mid, last, prev);
+
+    if (*prev && root->data < (*prev)->data)
+    {
+        if (!*first)
+        {
+            *first = *prev;
+            *mid = root;
+        }
+        else
+        {
+            *last = root;
+        }
+    }
+    *prev = root;
+
+    calculatePointer(root->right, first, mid, last, prev);
+}
+void restoreBST(Node *root)
+{
+    Node *first, *mid, *last, *prev;
+    first = NULL;
+    mid = NULL;
+    last = NULL;
+    prev = NULL;
+
+    calculatePointer(root, &first, &mid, &last, &prev);
+
+    if (first && last)
+    {
+        swap(&(first->data), &(last->data));
+    }
+    else if (first)
+    {
+        swap(&(first->data), &(mid->data));
+    }
+}
 int main()
 {
 
@@ -372,13 +472,26 @@ int main()
     //     cout << endl;
     // }
 
-    Node* root = new Node(12);
-    root->left = new Node(9);
-    root->right =new Node(15);
-    root->left->left = new Node(5);
-    root->left->right = new Node(10);
+    // Node* root = new Node(12);
+    // root->left = new Node(9);
+    // root->right =new Node(15);
+    // root->left->left = new Node(5);
+    // root->left->right = new Node(10);
     // zigzagTraversal(root);
     // cout<<endl;
 
-    cout<<isIdentical(root,root)<<endl;
+    // cout<<isIdentical(root,root)<<endl;
+
+    // cout << "largest bst : " << largestBSTinBT(root).ans;
+
+    Node *root = new Node(12);
+    root->left = new Node(9);
+    root->right = new Node(11);
+    root->left->left = new Node(5);
+    root->left->right = new Node(10);
+    inOrder(root);
+    cout << endl;
+    restoreBST(root);
+    inOrder(root);
+    cout << endl;
 }
