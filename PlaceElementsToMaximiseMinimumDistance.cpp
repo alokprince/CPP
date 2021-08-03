@@ -44,7 +44,7 @@ int largestmindist(int arr[], int n, int k)
         }
     }
 
-    return result;
+    return result
 }
 
 int main()
@@ -53,5 +53,5 @@ int main()
     int n= 5;
     int k = 3;
 
-    cout<< "largest min distance is: "<<largestmindist(arr,n,k);
+    cout<< "largest min distance is: "<<lar
 }

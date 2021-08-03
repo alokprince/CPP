@@ -219,7 +219,7 @@ int catalan(int n)
 }
 
 //  Possible number of BST by n nodes //
-
+// gives total number of bst possible with number of nodes
 vector<Node *> possibleBST(int start, int end)
 {
 
