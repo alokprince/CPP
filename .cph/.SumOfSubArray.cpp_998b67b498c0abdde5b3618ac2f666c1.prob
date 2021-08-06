@@ -1,1 +1,0 @@
-{"name":"Local: SumOfSubArray","url":"c:\\Users\\alokp\\OneDrive\\Desktop\\C++ Ds Algo\\SumOfSubArray.cpp","tests":[{"id":1622529210490,"input":"3\n1 2 2","output":"1 3 5 2 4 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\alokp\\OneDrive\\Desktop\\C++ Ds Algo\\SumOfSubArray.cpp","group":"local","local":true}

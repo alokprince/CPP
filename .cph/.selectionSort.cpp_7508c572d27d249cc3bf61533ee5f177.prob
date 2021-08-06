@@ -1,1 +1,0 @@
-{"name":"Local: selectionSort","url":"c:\\Users\\alokp\\OneDrive\\Desktop\\C++ Ds Algo\\selectionSort.cpp","tests":[{"id":1622470935280,"input":"5\n1 3 2 6 5","output":"1 2 3 5 6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\alokp\\OneDrive\\Desktop\\C++ Ds Algo\\selectionSort.cpp","group":"local","local":true}
