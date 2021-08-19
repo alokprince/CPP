@@ -26,6 +26,8 @@ void preOrder(struct Node *root)
     preOrder(root->left);
     preOrder(root->right);
 }
+
+
 void inOrder(struct Node *root)
 {
     if (root == NULL)

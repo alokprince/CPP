@@ -1,23 +1,25 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
+void subSequence(string s, string ans,int k)
+{
+    vector<int> arr;
+    if (s.length() == 0)
+    {
+        if(ans.size() >= k){
+        cout << ans << endl;
+        }
+        return;
+    }
+    char ch = s[0];
+    string remainingString = s.substr(1);
 
-void subSequence(string s,string ans){
-if(s.length()==0){
- cout<<ans<<endl;
- return;
+    subSequence(remainingString, ans + ch,k);
+    subSequence(remainingString, ans,k);
 }
-char ch = s[0];
-string remainingString = s.substr(1);
 
-
-subSequence(remainingString,ans);
-subSequence(remainingString,ans + ch);
-}
-
-
-
-int main(){
-subSequence("ABCDEFGHIJKL","");
-cout<<endl;
+int main()
+{
+    subSequence("ABCDE", "",0);
+    cout << endl;
 }
