@@ -19,6 +19,6 @@ for(int i = 0 ; i < 9; i ++){
 //        cout<<map.count(100)<<endl;
 //    }
 
-cout<<map.count(20) != map.end();
+
    
 }
