@@ -42,7 +42,7 @@ bool subset_sum(vector<int> arr, int sum)
 
 int main()
 {
-    vector<int> arr = {2, 3,11, 7, 8, 10};
+    vector<int> arr = { 2 , 3 , 11 , 7 , 8 , 10 };
     int sum = 14;
     cout << subset_sum(arr, sum);
 }

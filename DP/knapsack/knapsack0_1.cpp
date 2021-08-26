@@ -18,14 +18,6 @@ int knapsack(vector<int> wt, vector<int> val, int n, int w)
             }
         }
     }
-  
-    // cout << t.size();
-    // if( n == 0 || w == 0){
-    //     return 0;
-    // }
-    // if(t[n][w] != -1){
-    //     return t[n][w];
-    // }
     for (int i = 1; i < n + 1; i++)
     {
         for (int j = 1; j < w + 1; j++)
