@@ -17,21 +17,21 @@ int boolean_exp_par(string s,int i ,int j,bool isTrue){
         else
         return s[i] == 'F';
     }
-    // method 2
-    string temp = to_string(i);
-    temp.push_back(' ');
-    temp.append(to_string(j));
-    temp.push_back(' ');
-    temp.append(to_string(isTrue));
-    unordered_map<string,int> :: iterator it;
-    it->first = temp;
-    if(mp[temp] != mp.end()){
-        return mp[temp];
-    }
-    // method 1
-    // if(t[i][j][isTrue] != -1){
-    //     return t[i][j][isTrue];
+    //method 2
+    // string temp = to_string(i);
+    // temp.push_back(' ');
+    // temp.append(to_string(j));
+    // temp.push_back(' ');
+    // temp.append(to_string(isTrue));
+
+    
+    // if(mp.find(temp) != mp.end()){
+    //     return mp[temp];
     // }
+  //  method 1
+    if(t[i][j][isTrue] != -1){
+        return t[i][j][isTrue];
+    }
    int ans = 0;
 
     for(int k = i + 1; k <= j - 1; k=k+2){

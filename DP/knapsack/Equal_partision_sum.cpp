@@ -58,7 +58,7 @@ bool Equal_partition_sum(vector<int> arr, int n)
 
 int main()
 {
-    vector<int> arr = {1,5,1,2,2,1};
+    vector<int> arr = {2, 4 ,11, 10, 5 };
     int n = arr.size();
 
     cout << Equal_partition_sum(arr, n);

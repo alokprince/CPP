@@ -50,7 +50,8 @@ int Count_subsets_with_diff(vector<int> a,int diff){
 
 int main(){
 
-    vector<int> a = { 1,1,2,3};
+
+    vector<int> a = {10, 9, 4, 5, 4, 8, 6};
     int diff = 1;
     cout<<Count_subsets_with_diff(a,diff);
 }

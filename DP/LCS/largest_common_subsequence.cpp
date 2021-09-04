@@ -60,9 +60,9 @@ int LCS(string x,string y,int n,int m){
 
 int main(){
 
-    string x = "heap";
+    string x = "ecfbefdcfca";
     int n = x.size();
-    string y = "pea";
+    string y = "badfcbebbf";
     int m = y.size();
     
     cout<<LCS(x,y,n,m);

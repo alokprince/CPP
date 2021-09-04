@@ -20,7 +20,7 @@ int max_price(vector<int> len,vector<int> val,int N){
         for (int j = 1; j < w + 1; j++)
         {
             if(len[i-1] <= j){
-                t[i][j] = max(val[i-1] + t[i][j-len[i-1]],t[i-1][j]);
+                t[i][j] = max(1 + t[i-1][j-len[i-1]],t[i-1][j]);
             }
             else if(len[i-1] > j){
                 t[i][j] = t[i-1][j];
@@ -32,9 +32,9 @@ int max_price(vector<int> len,vector<int> val,int N){
     
 }
 int main(){
-    vector<int> len = {1,2,3,4,5,6,7,8};
+    vector<int> len = {2,1,1};
     vector<int> price = {1,5,8,9,10,17,17,20};
-    int N = 8;
+    int N = 4;
 
     cout<<max_price(len,price,N); 
 }

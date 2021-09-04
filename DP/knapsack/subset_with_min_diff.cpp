@@ -51,6 +51,7 @@ int Subsets_with_min_diff(vector<int> a){
 }
 
 int main(){
-    vector<int> a = {1,0,1,0,1,0,1,1,1,0,0,1};
+    //vector<int> a = {1,0,1,0,1,0,1,1,1,0,0,1};
+    vector<int> a = {14,10,6};
     cout<<Subsets_with_min_diff(a);
 }

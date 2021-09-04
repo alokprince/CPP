@@ -42,7 +42,7 @@ int egg_droping(int e, int f)
         
         int temp = 1 + max(low, hi);
         ans = min(temp, ans);
-         cout << ans << endl;
+         
     }
     return mp[temp] = ans;
 }

@@ -33,6 +33,7 @@ string print_LCSeq(string x,string y ,int n,int m){
     while( i > 0 , j > 0){
         if(x[i-1] == y[j-1]){
             ans.push_back(x[i-1]);
+           
             j--;
             i--;
         }
@@ -50,10 +51,12 @@ string print_LCSeq(string x,string y ,int n,int m){
 }
 
 int main(){
-    string x = "abcfefg";
-    string y = "abcdegg";
+    
+    string x = "sunday";
     int n = x.size();
+    string y = "saturday";
     int m = y.size();
-
-    cout << print_LCSeq(x,y, n, m);
+   
+      cout<< print_LCSeq(x,y, n, m);
+   
 }

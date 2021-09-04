@@ -25,7 +25,7 @@ int knapsack(vector<int> wt, vector<int> val, int n, int w)
             // n -> i   w -> j
             if (wt[i - 1] <= j)
             {
-                t[i][j] = max(val[i - 1] + t[ i - 1][ j - wt[i - 1]],t[i - 1][ j]);
+                t[i][j] = max(val[i - 1] + t[i-1][ j - wt[i - 1]],t[i - 1][ j]);
             }
             else if (wt[i - 1] > j)
             {
@@ -40,8 +40,11 @@ int main()
 {
     vector<int> wt = {10, 20, 30};
     vector<int> val = {60, 100, 120};
-    int w = 50;
-    cout << knapsack(wt, val, wt.size(), w);
+    vector<int> wt1 = { 3, 2, 4, 1};
+    vector<int> val1 = {1, 2, 5, 10};
+    
+    int w = 15;
+    cout << knapsack(wt1, val1, wt.size(), w);
 }
 //  { 60, 100, 120 };
 //  { 10, 20, 30 };
