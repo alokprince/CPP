@@ -40,10 +40,10 @@ int main()
 {
     vector<int> wt = {10, 20, 30};
     vector<int> val = {60, 100, 120};
-    vector<int> wt1 = { 3, 2, 4, 1};
-    vector<int> val1 = {1, 2, 5, 10};
+    vector<int> wt1 = { 1,2,3,4,5};
+    vector<int> val1 = {20, 10, 4, 50, 100};
     
-    int w = 15;
+    int w = 5;
     cout << knapsack(wt1, val1, wt.size(), w);
 }
 //  { 60, 100, 120 };

@@ -45,7 +45,7 @@ int min_num_coins(vector<int> a,int w){
 
 int main(){
 
-    vector<int> coins = {1,2,3};
-    int sum = 5;
+    vector<int> coins = {2,3,5};
+    int sum = 7;
     cout<< min_num_coins(coins,sum);
 }

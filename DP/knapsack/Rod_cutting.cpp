@@ -20,7 +20,7 @@ int max_price(vector<int> len,vector<int> val,int N){
         for (int j = 1; j < w + 1; j++)
         {
             if(len[i-1] <= j){
-                t[i][j] = max(1 + t[i-1][j-len[i-1]],t[i-1][j]);
+                t[i][j] = max(val[i-1] + t[i][j-len[i-1]],t[i-1][j]);
             }
             else if(len[i-1] > j){
                 t[i][j] = t[i-1][j];

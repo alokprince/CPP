@@ -22,12 +22,12 @@ int fun(int i,int j,int k){
 	c3 = max(fun(i+1,j,k),fun(i,j+1,k));
 
 	return mp[temp] = max({c1,c2,c3});
-}
+}    
 int main(){
 	cin>>n>>m>>k;
 	a = vector<int>(n);
 	b = vector<int>(m);
-
+    
 	for(auto &i : a)
 	cin>>i;
 

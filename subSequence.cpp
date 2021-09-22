@@ -21,7 +21,7 @@ using namespace std;
 
 int fun()
 {
-    subSequence("111001101100000001001110110101110001100", "",0);
+    subSequence("1110011011", "",0);
  
     unordered_set<string> st;
      for(auto i : v)

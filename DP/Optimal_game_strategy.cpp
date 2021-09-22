@@ -2,8 +2,9 @@
 using namespace std;
 
 long long solve(int i, int j, int arr[])
-{
-    if (i == j)
+{   
+    
+    if(i == j)
         return arr[i];
 
     if (i > j)
